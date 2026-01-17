@@ -1,127 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Easy Apps — Side Loaded by Flako</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flako • Easy Apps</title>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(180deg, #0f0f12, #1a1a1f);
-      color: #ffffff;
-      text-align: center;
-      padding: 20px;
-    }
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0f12;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
 
-    header {
-      margin-bottom: 25px;
-      padding: 20px;
-      background: #1c1c22;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
+/* Popup */
+#popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      font-weight: 700;
-    }
+.popup-box {
+  background: #1c1c22;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  max-width: 300px;
+}
 
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+.popup-box h2 {
+  margin: 0 0 10px;
+}
 
-    .app {
-      background: #1c1c22;
-      padding: 20px;
-      border-radius: 16px;
-      margin: 15px auto;
-      max-width: 340px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
+.popup-box a {
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+}
 
-    .install {
-      display: block;
-      margin-top: 15px;
-      padding: 14px;
-      background: #0a84ff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+/* Socials */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
 
-    .install:hover {
-      background: #0066cc;
-    }
+.socials a {
+  background: #0a84ff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .socials {
-      margin: 20px 0;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .socials a {
-      padding: 10px 16px;
-      background: #0a84ff;
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+header h1 {
+  font-size: 36px;
+  margin: 0;
+}
 
-    .socials a:hover {
-      background: #0066cc;
-    }
+header p {
+  font-size: 13px;
+  opacity: 0.7;
+}
 
-    footer {
-      font-size: 12px;
-      opacity: 0.6;
-      margin-top: 35px;
-    }
-  </style>
+/* App Store Cards */
+.app {
+  display: flex;
+  align-items: center;
+  background: #1c1c22;
+  padding: 15px;
+  border-radius: 18px;
+  margin-bottom: 15px;
+}
+
+.app img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+}
+
+.app-info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.app-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.app-info p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.install {
+  background: #0a84ff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>EASY APPS — Side Loaded by Flako</h1>
-  <p>God is good 🙏</p>
-</header>
-
-<div class="app">
-  <h2>Ksign</h2>
-  <p>Sign apps directly on your iPhone</p>
-  <a class="install" href="https://i.diawi.com/YmJNK2">Install</a>
+<!-- POPUP -->
+<div id="popup">
+  <div class="popup-box">
+    <h2>Subscribe Required</h2>
+    <p>Subscribe to <b>Rooted</b> before accessing this page</p>
+    <a href="https://youtube.com/@knoxflako?si=tnlTF_3Vn5TvKLty" target="_blank">
+      Subscribe on YouTube
+    </a>
+    <p style="margin-top:10px;font-size:12px;opacity:.6;">
+      Continuing automatically...
+    </p>
+  </div>
 </div>
 
-<div class="app">
-  <h2>Esign</h2>
-  <p>Sign IPA files on iOS</p>
-  <a class="install" href="https://i.diawi.com/pvq7Yy">Install</a>
-</div>
-
-<div class="app">
-  <h2>DNS</h2>
-  <p>Direct install DNS file</p>
-  <a class="install" href="https://c.info.beacons.ai/ls/click?upn=u001.RHaosCeEHY47AJZnZ-2FsxSB-2FHV1-2FCUNZgsJvtVju0Jmhq32J1xcYOrb85oLvtzS0YHq6x0LJefmI0sca473ewHji-2FcN7V49Ci2Z-2BH-2Bh5xfRs-3DXkj7_-2BYHh5z7WaGKLLl6wZVNbtC3mgrTj8ABohRSShjHRVGJybet-2FU6-2BhqA3iVsnPAzxUHtxwI2sJi4YFBHEUjTnJFFbSb-2BjyFNW7nY8h1FBYIydd1mkPXFf-2BEhaoVcz7-2FN67D2WHEbnQxlA8Wch3ZaCtsq9bhfcoyV6mIDMYwiUJMNKH8PTZ24cj6YQdam0cD-2BnXI1U-2Bl-2FiXWgjexK7HbozALzJBOafSItUnNKgr3orxm8dh93DKO7DrC55yJhv03bmN-2FL0zUiITR-2B-2BewRyRfKg1U-2Fkt-2FB71ETq7S96YloH1MBqBD7R-2F-2FXlhzaZZU-2F4RpRmyK4sCkP8iP5-2FSpZjUJyV48APELakiY6GNOzL-2BSy3m90-3D">Install</a>
-</div>
-
+<!-- SOCIALS -->
 <div class="socials">
   <a href="https://discord.gg/Ax3qC23tD" target="_blank">Discord</a>
   <a href="https://youtube.com/@knoxflako?si=tnlTF_3Vn5TvKLty" target="_blank">YouTube</a>
 </div>
 
+<!-- HEADER -->
+<header>
+  <h1>Flako</h1>
+  <p>God is good 🙏</p>
+</header>
+
+<!-- APPS -->
+<div class="app">
+  <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+  <div class="app-info">
+    <h3>Ksign</h3>
+    <p>Sign apps directly on iOS</p>
+  </div>
+  <a class="install" href="https://i.diawi.com/YmJNK2">GET</a>
+</div>
+
+<div class="app">
+  <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png">
+  <div class="app-info">
+    <h3>Esign</h3>
+    <p>IPA signer for iPhone</p>
+  </div>
+  <a class="install" href="https://i.diawi.com/pvq7Yy">GET</a>
+</div>
+
+<div class="app">
+  <img src="https://cdn-icons-png.flaticon.com/512/888/888853.png">
+  <div class="app-info">
+    <h3>DNS</h3>
+    <p>Direct DNS install</p>
+  </div>
+  <a class="install" href="https://c.info.beacons.ai/ls/click?upn=u001.RHaosCeEHY47AJZnZ-2FsxSB-2FHV1-2FCUNZgsJvtVju0Jmhq32J1xcYOrb85oLvtzS0YHq6x0LJefmI0sca473ewHji-2FcN7V49Ci2Z-2BH-2Bh5xfRs-3DXkj7_-2BYHh5z7WaGKLLl6wZVNbtC3mgrTj8ABohRSShjHRVGJybet-2FU6-2BhqA3iVsnPAzxUHtxwI2sJi4YFBHEUjTnJFFbSb-2BjyFNW7nY8h1FBYIydd1mkPXFf-2BEhaoVcz7-2FN67D2WHEbnQxlA8Wch3ZaCtsq9bhfcoyV6mIDMYwiUJMNKH8PTZ24cj6YQdam0cD-2BnXI1U-2Bl-2FiXWgjexK7HbozALzJBOafSItUnNKgr3orxm8dh93DKO7DrC55yJhv03bmN-2FL0zUiITR-2B-2BewRyRfKg1U-2Fkt-2FB71ETq7S96YloH1MBqBD7R-2F-2FXlhzaZZU-2F4RpRmyK4sCkP8iP5-2FSpZjUJyV48APELakiY6GNOzL-2BSy3m90-3D">GET</a>
+</div>
+
 <footer>
-  Educational purposes only. Certificates may revoke at any time.<br>
-  © 2026 Flako’s Apps
+Educational purposes only • Certificates may revoke<br>
+© 2026 Flako’s Apps
 </footer>
+
+<script>
+setTimeout(() => {
+  document.getElementById("popup").style.display = "none";
+}, 5000);
+</script>
 
 </body>
 </html>
