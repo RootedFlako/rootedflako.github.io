@@ -14,7 +14,7 @@ body {
   padding: 20px;
 }
 
-/* Popup */
+/* POPUP */
 #popup {
   position: fixed;
   inset: 0;
@@ -23,6 +23,12 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#popup.show {
+  opacity: 1;
 }
 
 .popup-box {
@@ -81,26 +87,26 @@ header p {
   opacity: 0.7;
 }
 
-/* App Store Cards */
+/* App Cards */
 .app {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #1c1c22;
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.app img {
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
-  object-fit: cover;
+.app:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 .app-info {
   flex: 1;
-  margin-left: 12px;
+  text-align: left;
 }
 
 .app-info h3 {
@@ -114,14 +120,19 @@ header p {
   opacity: 0.75;
 }
 
+/* Install Buttons */
 .install {
-  background: #0a84ff;
+  background: #0a84ff; /* solid color */
   color: white;
   padding: 10px 16px;
-  border-radius: 20px;
+  border-radius: 22px;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
+}
+
+.install:hover {
+  background: #0066cc;
 }
 
 /* Footer */
@@ -164,7 +175,6 @@ footer {
 
 <!-- Ksign -->
 <div class="app">
-  <img src="https://i.imgur.com/0ONXj5C.png" alt="Ksign Icon">
   <div class="app-info">
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
@@ -174,7 +184,6 @@ footer {
 
 <!-- Esign -->
 <div class="app">
-  <img src="https://i.imgur.com/7dW4lQZ.png" alt="Esign Icon">
   <div class="app-info">
     <h3>Esign</h3>
     <p>IPA signer for iPhone</p>
@@ -184,24 +193,8 @@ footer {
 
 <!-- DNS -->
 <div class="app">
-  <img src="https://i.imgur.com/yvZtDgQ.png" alt="DNS Icon">
   <div class="app-info">
     <h3>DNS</h3>
     <p>Direct DNS install</p>
   </div>
-  <a class="install" href="https://c.info.beacons.ai/ls/click?upn=u001.RHaosCeEHY47AJZnZ-2FsxSB-2FHV1-2FCUNZgsJvtVju0Jmhq32J1xcYOrb85oLvtzS0YHq6x0LJefmI0sca473ewHji-2FcN7V49Ci2Z-2BH-2Bh5xfRs-3DXkj7_-2BYHh5z7WaGKLLl6wZVNbtC3mgrTj8ABohRSShjHRVGJybet-2FU6-2BhqA3iVsnPAzxUHtxwI2sJi4YFBHEUjTnJFFbSb-2BjyFNW7nY8h1FBYIydd1mkPXFf-2BEhaoVcz7-2FN67D2WHEbnQxlA8Wch3ZaCtsq9bhfcoyV6mIDMYwiUJMNKH8PTZ24cj6YQdam0cD-2BnXI1U-2Bl-2FiXWgjexK7HbozALzJBOafSItUnNKgr3orxm8dh93DKO7DrC55yJhv03bmN-2FL0zUiITR-2B-2BewRyRfKg1U-2Fkt-2FB71ETq7S96YloH1MBqBD7R-2F-2FXlhzaZZU-2F4RpRmyK4sCkP8iP5-2FSpZjUJyV48APELakiY6GNOzL-2BSy3m90-3D">GET</a>
-</div>
-
-<footer>
-Educational purposes only • Certificates may revoke<br>
-© 2026 Flako’s Apps
-</footer>
-
-<script>
-setTimeout(() => {
-  document.getElementById("popup").style.display = "none";
-}, 5000);
-</script>
-
-</body>
-</html>
+  <a class="install" href="https://c.info.beacons.ai/ls/click?upn=u001.RHaosCeEHY47AJZnZ-2FsxSB-2FHV1-2FCUNZgsJvtVju0Jmhq32J1xcYOrb85oLvtzS0YHq6x0LJefmI0sca473ewHji-2FcN7V49Ci2Z-2BH-2Bh5xfRs-3DXkj7_-2BYHh5z7WaGKLLl6wZVNbtC3mgrTj8ABohRSShjHRVGJybet-2FU6-2BhqA3iVsnPAzxUHtxwI2sJi4YFBHEUjTnJFFbSb-2BjyFNW7nY8h1FBYIydd1mkPXFf-2BEhaoVcz7-2FN67D2WHEbnQxlA8Wch3ZaCtsq9_
