@@ -23,12 +23,11 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  pointer-events: auto; /* allow clicks on popup only */
 }
 
-#popup.show {
-  opacity: 1;
+#popup.hidden {
+  display: none;
 }
 
 .popup-box {
@@ -209,11 +208,20 @@ Educational purposes only • Certificates may revoke<br>
 window.onload = () => {
   const popup = document.getElementById("popup");
   popup.classList.add("show");
+
+  // Hide popup after 7 seconds
   setTimeout(() => {
-    popup.classList.remove("show");
-  }, 7000); // 7 seconds
+    popup.classList.add("hidden");
+  }, 7000);
+
+  // Also allow user to click anywhere on the popup-box to dismiss early
+  const popupBox = popup.querySelector(".popup-box");
+  popupBox.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
 };
 </script>
 
 </body>
 </html>
+
