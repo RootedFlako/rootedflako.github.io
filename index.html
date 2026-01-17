@@ -14,7 +14,7 @@ body {
   padding: 20px;
 }
 
-/* Popup */
+/* POPUP */
 #popup {
   position: fixed;
   inset: 0;
@@ -23,6 +23,12 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#popup.show {
+  opacity: 1;
 }
 
 .popup-box {
@@ -31,6 +37,7 @@ body {
   border-radius: 18px;
   text-align: center;
   max-width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .popup-box h2 {
@@ -46,6 +53,11 @@ body {
   text-decoration: none;
   border-radius: 12px;
   font-weight: 700;
+  transition: 0.2s;
+}
+
+.popup-box a:hover {
+  background: #cc0000;
 }
 
 /* Socials */
@@ -63,6 +75,11 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.2s;
+}
+
+.socials a:hover {
+  background: #0066cc;
 }
 
 /* Header */
@@ -81,7 +98,7 @@ header p {
   opacity: 0.7;
 }
 
-/* App Store Cards */
+/* App Cards */
 .app {
   display: flex;
   align-items: center;
@@ -89,12 +106,19 @@ header p {
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 .app img {
   width: 64px;
   height: 64px;
   border-radius: 14px;
+  object-fit: cover;
 }
 
 .app-info {
@@ -113,14 +137,22 @@ header p {
   opacity: 0.75;
 }
 
+/* Install Buttons */
 .install {
-  background: #0a84ff;
+  background: linear-gradient(135deg, #0a84ff, #0076e5);
   color: white;
   padding: 10px 16px;
-  border-radius: 20px;
+  border-radius: 22px;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.install:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 132, 255, 0.8);
 }
 
 /* Footer */
@@ -163,7 +195,7 @@ footer {
 
 <!-- APPS -->
 <div class="app">
-  <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+  <img src="https://i.imgur.com/0ONXj5C.png" alt="Ksign Icon">
   <div class="app-info">
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
@@ -172,7 +204,7 @@ footer {
 </div>
 
 <div class="app">
-  <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png">
+  <img src="https://i.imgur.com/7dW4lQZ.png" alt="Esign Icon">
   <div class="app-info">
     <h3>Esign</h3>
     <p>IPA signer for iPhone</p>
@@ -181,7 +213,7 @@ footer {
 </div>
 
 <div class="app">
-  <img src="https://cdn-icons-png.flaticon.com/512/888/888853.png">
+  <img src="https://i.imgur.com/yvZtDgQ.png" alt="DNS Icon">
   <div class="app-info">
     <h3>DNS</h3>
     <p>Direct DNS install</p>
@@ -195,9 +227,14 @@ Educational purposes only • Certificates may revoke<br>
 </footer>
 
 <script>
-setTimeout(() => {
-  document.getElementById("popup").style.display = "none";
-}, 10000);
+// Show popup with fade
+window.onload = () => {
+  const popup = document.getElementById("popup");
+  popup.classList.add("show");
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 10000); // 10 seconds
+};
 </script>
 
 </body>
