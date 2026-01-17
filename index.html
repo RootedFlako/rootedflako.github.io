@@ -102,6 +102,7 @@ header p {
 .app {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #1c1c22;
   padding: 15px;
   border-radius: 18px;
@@ -114,16 +115,10 @@ header p {
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
-.app img {
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
 .app-info {
   flex: 1;
-  margin-left: 12px;
+  margin-left: 0;
+  text-align: left;
 }
 
 .app-info h3 {
@@ -195,7 +190,6 @@ footer {
 
 <!-- APPS -->
 <div class="app">
-  <img src="https://i.imgur.com/0ONXj5C.png" alt="Ksign Icon">
   <div class="app-info">
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
@@ -204,7 +198,6 @@ footer {
 </div>
 
 <div class="app">
-  <img src="https://i.imgur.com/7dW4lQZ.png" alt="Esign Icon">
   <div class="app-info">
     <h3>Esign</h3>
     <p>IPA signer for iPhone</p>
@@ -213,7 +206,6 @@ footer {
 </div>
 
 <div class="app">
-  <img src="https://i.imgur.com/yvZtDgQ.png" alt="DNS Icon">
   <div class="app-info">
     <h3>DNS</h3>
     <p>Direct DNS install</p>
