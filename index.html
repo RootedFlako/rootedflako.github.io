@@ -14,7 +14,7 @@ body {
   padding: 20px;
 }
 
-/* POPUP */
+/* Popup */
 #popup {
   position: fixed;
   inset: 0;
@@ -23,12 +23,6 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-#popup.show {
-  opacity: 1;
 }
 
 .popup-box {
@@ -71,10 +65,6 @@ body {
   font-weight: 600;
 }
 
-.socials a:hover {
-  background: #0066cc;
-}
-
 /* Header */
 header {
   text-align: center;
@@ -91,20 +81,26 @@ header p {
   opacity: 0.7;
 }
 
-/* App Cards */
+/* App Store Cards */
 .app {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: #1c1c22;
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 15px;
 }
 
+.app img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
 .app-info {
   flex: 1;
-  text-align: left;
+  margin-left: 12px;
 }
 
 .app-info h3 {
@@ -118,19 +114,14 @@ header p {
   opacity: 0.75;
 }
 
-/* Install Buttons */
 .install {
-  background: #0a84ff; /* solid color button */
+  background: #0a84ff;
   color: white;
   padding: 10px 16px;
-  border-radius: 22px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
-}
-
-.install:hover {
-  background: #0066cc;
 }
 
 /* Footer */
@@ -171,8 +162,9 @@ footer {
   <p>God is good 🙏</p>
 </header>
 
-<!-- APPS -->
+<!-- Ksign -->
 <div class="app">
+  <img src="https://i.imgur.com/0ONXj5C.png" alt="Ksign Icon">
   <div class="app-info">
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
@@ -180,7 +172,9 @@ footer {
   <a class="install" href="https://i.diawi.com/YmJNK2">GET</a>
 </div>
 
+<!-- Esign -->
 <div class="app">
+  <img src="https://i.imgur.com/7dW4lQZ.png" alt="Esign Icon">
   <div class="app-info">
     <h3>Esign</h3>
     <p>IPA signer for iPhone</p>
@@ -188,7 +182,9 @@ footer {
   <a class="install" href="https://i.diawi.com/pvq7Yy">GET</a>
 </div>
 
+<!-- DNS -->
 <div class="app">
+  <img src="https://i.imgur.com/yvZtDgQ.png" alt="DNS Icon">
   <div class="app-info">
     <h3>DNS</h3>
     <p>Direct DNS install</p>
@@ -202,14 +198,9 @@ Educational purposes only • Certificates may revoke<br>
 </footer>
 
 <script>
-// Show popup with fade
-window.onload = () => {
-  const popup = document.getElementById("popup");
-  popup.classList.add("show");
-  setTimeout(() => {
-    popup.classList.remove("show");
-  }, 10000); // 10 seconds
-};
+setTimeout(() => {
+  document.getElementById("popup").style.display = "none";
+}, 5000);
 </script>
 
 </body>
