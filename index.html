@@ -14,7 +14,7 @@ body {
   padding: 20px;
 }
 
-/* TOP WARNING BAR */
+/* WARNING BAR */
 .warning-bar {
   background: #ff0000;
   color: #fff;
@@ -25,6 +25,12 @@ body {
   margin-bottom: 20px;
   font-size: 14px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 4px 10px rgba(255,0,0,0.5); }
+  100% { box-shadow: 0 6px 20px rgba(255,0,0,0.8); }
 }
 
 /* POPUP */
@@ -64,6 +70,12 @@ body {
   text-decoration: none;
   border-radius: 12px;
   font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.popup-box a:hover {
+  background: #cc0000;
+  transform: scale(1.05);
 }
 
 /* Socials */
@@ -81,11 +93,12 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .socials a:hover {
   background: #0066cc;
+  transform: scale(1.05);
 }
 
 /* Header */
@@ -97,11 +110,12 @@ header {
 header h1 {
   font-size: 36px;
   margin: 0;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.2s;
 }
 
 header h1:hover {
   color: #0a84ff;
+  transform: scale(1.05);
 }
 
 header p {
@@ -114,12 +128,17 @@ header p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1c1c22;
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 15px;
   transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff;
 }
+
+/* Gradient backgrounds for apps */
+.ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); }
+.esign { background: linear-gradient(135deg, #34c759, #22863a); }
+.dns { background: linear-gradient(135deg, #af52de, #7a2fae); }
 
 .app:hover {
   transform: translateY(-3px);
@@ -139,24 +158,26 @@ header p {
 .app-info p {
   margin: 4px 0 0;
   font-size: 13px;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 /* Install Buttons */
 .install {
-  background: #0a84ff;
-  color: white;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
   padding: 10px 16px;
   border-radius: 22px;
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
-  transition: background 0.2s, transform 0.2s;
+  transition: all 0.2s;
 }
 
 .install:hover {
-  background: #0066cc;
-  transform: scale(1.05);
+  background: #fff;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #fff;
 }
 
 /* Footer */
@@ -203,7 +224,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 </header>
 
 <!-- Ksign -->
-<div class="app">
+<div class="app ksign">
   <div class="app-info">
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
@@ -212,7 +233,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 </div>
 
 <!-- Esign -->
-<div class="app">
+<div class="app esign">
   <div class="app-info">
     <h3>Esign</h3>
     <p>IPA signer for iPhone</p>
@@ -221,7 +242,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 </div>
 
 <!-- DNS -->
-<div class="app">
+<div class="app dns">
   <div class="app-info">
     <h3>DNS</h3>
     <p>Direct DNS install</p>
