@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flako • Easy Apps</title>
+<title>RootedFlakoo • Easy Apps</title>
 
 <style>
 body {
@@ -12,6 +12,7 @@ body {
   color: #fff;
   margin: 0;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 /* WARNING BAR */
@@ -57,9 +58,7 @@ body {
   cursor: pointer;
 }
 
-.popup-box h2 {
-  margin: 0 0 10px;
-}
+.popup-box h2 { margin: 0 0 10px; }
 
 .popup-box a {
   display: block;
@@ -110,7 +109,9 @@ header {
 header h1 {
   font-size: 36px;
   margin: 0;
-  transition: color 0.3s, transform 0.2s;
+  transition: color 0.3s, transform 0.3s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 header h1:hover {
@@ -121,6 +122,12 @@ header h1:hover {
 header p {
   font-size: 13px;
   opacity: 0.7;
+  animation: fadeIn 1.5s forwards;
+}
+
+/* Fade-in animation for header & cards */
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 /* App Cards */
@@ -131,35 +138,28 @@ header p {
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 15px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s, background-position 3s;
   color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 /* Gradient backgrounds for apps */
-.ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); }
-.esign { background: linear-gradient(135deg, #34c759, #22863a); }
-.dns { background: linear-gradient(135deg, #af52de, #7a2fae); }
+.ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); background-size: 200% 200%; }
+.esign { background: linear-gradient(135deg, #34c759, #22863a); background-size: 200% 200%; }
+.dns { background: linear-gradient(135deg, #af52de, #7a2fae); background-size: 200% 200%; }
 
+/* Animate gradient shift on hover */
 .app:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  background-position: right center;
 }
 
-.app-info {
-  flex: 1;
-  text-align: left;
-}
-
-.app-info h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.app-info p {
-  margin: 4px 0 0;
-  font-size: 13px;
-  opacity: 0.85;
-}
+/* App info */
+.app-info { flex: 1; text-align: left; }
+.app-info h3 { margin: 0; font-size: 18px; }
+.app-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
 
 /* Install Buttons */
 .install {
@@ -219,7 +219,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 
 <!-- HEADER -->
 <header>
-  <h1>Flako</h1>
+  <h1>SideLoaded By RootedFlakoo</h1>
   <p>God is good 🙏</p>
 </header>
 
@@ -252,7 +252,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 
 <footer>
 Educational purposes only • Certificates may revoke<br>
-© 2026 Flako’s Apps
+© 2026 RootedFlakoo
 </footer>
 
 <script>
@@ -265,11 +265,26 @@ window.onload = () => {
     popup.classList.add("hidden");
   }, 7000);
 
-  // Allow user to click the popup-box to dismiss early
+  // Allow user to click popup to dismiss early
   const popupBox = popup.querySelector(".popup-box");
   popupBox.addEventListener("click", () => {
     popup.classList.add("hidden");
   });
+
+  // Scroll reveal for app cards
+  const apps = document.querySelectorAll('.app');
+  const reveal = () => {
+    const triggerBottom = window.innerHeight * 0.9;
+    apps.forEach(app => {
+      const appTop = app.getBoundingClientRect().top;
+      if(appTop < triggerBottom){
+        app.style.opacity = '1';
+        app.style.transform = 'translateY(0)';
+      }
+    });
+  };
+  window.addEventListener('scroll', reveal);
+  reveal(); // initial check
 };
 </script>
 
