@@ -260,7 +260,10 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 
 <!-- SCRIPTS SECTION -->
 <div class="scripts-section">
-  <div class="scripts-title">Steal A Brain Rot</div>
+  <div class="scripts-title">Scripts</div>
+  <div style="font-size:13px; opacity:0.7; margin-bottom:6px;">
+    Steal A Brain Rot (SAB)
+  </div>
   <div class="scripts-warning">
     ⚠️ Use at your own risk. Scripts may cause bans, crashes, or data loss.
   </div>
@@ -268,10 +271,11 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
   <!-- Chili Hub -->
   <div class="script">
     <div class="script-info">
-      <h4>Chili Hub Script</h4>
-      <p>Brain Rot • Universal Chili Hub loadstring</p>
+      <h4>Chili Hub</h4>
+      <p>SAB • Universal Chili Hub loadstring</p>
     </div>
-    <button class="copy-btn" data-script='loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()'>
+    <button class="copy-btn"
+      data-script='loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()'>
       COPY
     </button>
   </div>
@@ -279,64 +283,26 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
   <!-- Lemon Hub -->
   <div class="script">
     <div class="script-info">
-      <h4>Lemon Hub Script</h4>
-      <p>Brain Rot • Official Lemon Hub loadstring</p>
+      <h4>Lemon Hub</h4>
+      <p>SAB • Official Lemon Hub loadstring</p>
     </div>
-    <button class="copy-btn" data-script='loadstring(game:HttpGet("https://lemonhub.xyz/panel/script"))()'>
+    <button class="copy-btn"
+      data-script='loadstring(game:HttpGet("https://lemonhub.xyz/panel/script"))()'>
+      COPY
+    </button>
+  </div>
+
+  <!-- Nameless Hub -->
+  <div class="script">
+    <div class="script-info">
+      <h4>Nameless Hub</h4>
+      <p>SAB • from my TikTok video</p>
+    </div>
+    <button class="copy-btn"
+      data-script='script_key="PUT YOUR KEY HERE";
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ily123950/Vulkan/refs/heads/main/Tr"))()'>
       COPY
     </button>
   </div>
 
 </div>
-
-<footer>
-Educational purposes only • Certificates may revoke<br>
-© 2026 RootedFlakoo
-</footer>
-
-<script>
-window.onload = () => {
-  const popup = document.getElementById("popup");
-  popup.classList.add("show");
-
-  // Hide popup after 7 seconds
-  setTimeout(() => { popup.classList.add("hidden"); }, 7000);
-
-  // Allow user to click popup to dismiss early
-  const popupBox = popup.querySelector(".popup-box");
-  popupBox.addEventListener("click", () => { popup.classList.add("hidden"); });
-
-  // Scroll reveal for app + script cards
-  const cards = document.querySelectorAll('.app, .script');
-  const reveal = () => {
-    const triggerBottom = window.innerHeight * 0.9;
-    cards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if(cardTop < triggerBottom){
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }
-    });
-  };
-  window.addEventListener('scroll', reveal);
-  reveal(); // initial check
-
-  // Copy buttons for scripts
-  document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const script = btn.getAttribute('data-script');
-      navigator.clipboard.writeText(script).then(() => {
-        btn.classList.add('copied');
-        btn.textContent = 'COPIED';
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.textContent = 'COPY';
-        }, 1500);
-      });
-    });
-  });
-};
-</script>
-
-</body>
-</html>
