@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RootedFlakoo • Easy Apps</title>
+<title>SideLoaded By RootedFlakoo</title>
 
 <style>
 body {
@@ -12,26 +12,16 @@ body {
   color: #fff;
   margin: 0;
   padding: 20px;
-  overflow-x: hidden;
 }
 
-/* WARNING BAR */
-.warning-bar {
-  background: #ff0000;
-  color: #fff;
-  text-align: center;
+/* TOP WARNING */
+.top-warning {
+  background: #b30000;
   padding: 12px;
-  border-radius: 12px;
+  text-align: center;
   font-weight: 700;
+  border-radius: 12px;
   margin-bottom: 20px;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  animation: pulse 1.5s infinite alternate;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 4px 10px rgba(255,0,0,0.5); }
-  100% { box-shadow: 0 6px 20px rgba(255,0,0,0.8); }
 }
 
 /* POPUP */
@@ -45,18 +35,13 @@ body {
   z-index: 9999;
 }
 
-#popup.hidden { display: none; }
-
 .popup-box {
   background: #1c1c22;
   padding: 25px;
   border-radius: 18px;
   text-align: center;
   max-width: 300px;
-  cursor: pointer;
 }
-
-.popup-box h2 { margin: 0 0 10px; }
 
 .popup-box a {
   display: block;
@@ -67,212 +52,198 @@ body {
   text-decoration: none;
   border-radius: 12px;
   font-weight: 700;
-  transition: background 0.2s, transform 0.2s;
 }
 
-.popup-box a:hover {
-  background: #cc0000;
-  transform: scale(1.05);
-}
-
-/* Socials */
+/* SOCIALS */
 .socials {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .socials a {
   background: #0a84ff;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 10px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
 }
 
-.socials a:hover {
-  background: #0066cc;
-  transform: scale(1.05);
-}
-
-/* Header */
+/* HEADER */
 header {
   text-align: center;
   margin-bottom: 30px;
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 38px;
   margin: 0;
-  transition: color 0.3s, transform 0.3s;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-header h1:hover {
-  color: #0a84ff;
-  transform: scale(1.05);
 }
 
 header p {
   font-size: 13px;
   opacity: 0.7;
-  animation: fadeIn 1.5s forwards;
 }
 
-@keyframes fadeIn { to { opacity: 1; } }
-
-/* App & Script Cards */
-.app, .script {
+/* APPS */
+.app {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px;
+  background: #1c1c22;
+  padding: 16px;
   border-radius: 18px;
   margin-bottom: 15px;
-  transition: transform 0.3s, box-shadow 0.3s, background-position 3s;
-  color: #fff;
-  opacity: 0;
-  transform: translateY(30px);
+  transition: transform .2s;
 }
 
-.ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); background-size: 200% 200%; }
-.esign { background: linear-gradient(135deg, #34c759, #22863a); background-size: 200% 200%; }
-.dns { background: linear-gradient(135deg, #af52de, #7a2fae); background-size: 200% 200%; }
-.script { background: linear-gradient(135deg, #2a2a30, #1a1a1f); }
-
-/* Animate gradient shift on hover */
-.app:hover, .script:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  background-position: right center;
+.app:hover {
+  transform: scale(1.02);
 }
 
-/* App info */
-.app-info, .script-info { flex: 1; text-align: left; }
-.app-info h3, .script-info h4 { margin: 0; font-size: 18px; }
-.app-info p, .script-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
+.app-info {
+  flex: 1;
+}
 
-/* Install & Copy Buttons */
-.install, .run-btn, .copy-btn {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 22px;
+.install {
+  background: #0a84ff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 14px;
-  transition: all 0.2s;
+}
+
+/* SCRIPTS */
+.scripts-section {
+  margin-top: 40px;
+}
+
+.scripts-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.scripts-warning {
+  font-size: 13px;
+  opacity: 0.65;
+  margin-bottom: 14px;
+}
+
+.script {
+  background: #1c1c22;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.script-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.script-info p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.copy-btn {
+  background: #0a84ff;
   border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.install:hover, .run-btn:hover, .copy-btn:hover {
-  background: #fff;
-  color: #000;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #fff;
+.copy-btn:hover {
+  opacity: 0.85;
 }
 
-.copy-btn.copied {
-  background: #34c759;
-  color: #000;
-  box-shadow: 0 0 12px #34c759;
-}
-
-/* Scripts Section */
-.scripts-section { margin-top: 40px; }
-.scripts-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
-.scripts-warning { font-size: 13px; color: #ffcc00; margin-bottom: 15px; opacity: 0.9; }
-
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   font-size: 12px;
   opacity: 0.6;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- WARNING BAR -->
-<div class="warning-bar">
-DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
-</div>
-
 <!-- POPUP -->
 <div id="popup">
   <div class="popup-box">
     <h2>Subscribe Required</h2>
     <p>Subscribe to <b>Rooted</b> before accessing this page</p>
-    <a href="https://youtube.com/@knoxflako?si=tnlTF_3Vn5TvKLty" target="_blank">
-      Subscribe on YouTube
-    </a>
-    <p style="margin-top:10px;font-size:12px;opacity:.6;">
+    <a href="https://youtube.com/@knoxflako" target="_blank">Subscribe</a>
+    <p style="font-size:12px;opacity:.6;margin-top:8px;">
       Continuing automatically...
     </p>
   </div>
 </div>
 
-<!-- SOCIALS -->
-<div class="socials">
-  <a href="https://discord.gg/Ax3qC23tD" target="_blank">Discord</a>
-  <a href="https://youtube.com/@knoxflako?si=tnlTF_3Vn5TvKLty" target="_blank">YouTube</a>
+<div class="top-warning">
+DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 </div>
 
-<!-- HEADER -->
+<div class="socials">
+  <a href="https://discord.gg/Ax3qC23tD" target="_blank">Discord</a>
+  <a href="https://youtube.com/@knoxflako" target="_blank">YouTube</a>
+</div>
+
 <header>
   <h1>SideLoaded By RootedFlakoo</h1>
   <p>God is good</p>
 </header>
 
-<!-- Ksign -->
-<div class="app ksign">
+<!-- APPS -->
+<div class="app">
   <div class="app-info">
-    <h3>Ksign</h3>
-    <p>Sign apps directly on iOS</p>
+    <h3>KSign</h3>
+    <p>iOS IPA signer</p>
   </div>
   <a class="install" href="https://i.diawi.com/EVysrX">GET</a>
 </div>
 
-<!-- Esign -->
-<div class="app esign">
+<div class="app">
   <div class="app-info">
-    <h3>Esign</h3>
-    <p>IPA signer for iPhone</p>
+    <h3>ESign</h3>
+    <p>Sign apps directly</p>
   </div>
   <a class="install" href="https://i.diawi.com/pvq7Yy">GET</a>
 </div>
 
-<!-- DNS -->
-<div class="app dns">
+<div class="app">
   <div class="app-info">
     <h3>DNS</h3>
-    <p>Direct DNS install</p>
+    <p>Required for installs</p>
   </div>
   <a class="install" href="https://github.com/Nyasami/getUDID-JS/releases/download/1.0.0/signed_khoindvn_fullchain.mobileconfig">GET</a>
 </div>
 
-<!-- SCRIPTS SECTION -->
+<!-- SCRIPTS -->
 <div class="scripts-section">
   <div class="scripts-title">Scripts</div>
-  <div style="font-size:13px; opacity:0.7; margin-bottom:6px;">
+  <div style="font-size:13px;opacity:.7;margin-bottom:6px;">
     Steal A Brain Rot (SAB)
   </div>
   <div class="scripts-warning">
-    ⚠️ Use at your own risk. Scripts may cause bans, crashes, or data loss.
+    Use at your own risk. Scripts may result in bans.
   </div>
 
-  <!-- Chili Hub -->
   <div class="script">
     <div class="script-info">
       <h4>Chili Hub</h4>
-      <p>SAB • Universal Chili Hub loadstring</p>
+      <p>SAB script</p>
     </div>
     <button class="copy-btn"
       data-script='loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()'>
@@ -280,11 +251,10 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
     </button>
   </div>
 
-  <!-- Lemon Hub -->
   <div class="script">
     <div class="script-info">
       <h4>Lemon Hub</h4>
-      <p>SAB • Official Lemon Hub loadstring</p>
+      <p>SAB script</p>
     </div>
     <button class="copy-btn"
       data-script='loadstring(game:HttpGet("https://lemonhub.xyz/panel/script"))()'>
@@ -292,7 +262,6 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
     </button>
   </div>
 
-  <!-- Nameless Hub -->
   <div class="script">
     <div class="script-info">
       <h4>Nameless Hub</h4>
@@ -304,5 +273,26 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ily123950/Vulkan/refs
       COPY
     </button>
   </div>
-
 </div>
+
+<footer>
+Educational purposes only • Certificates may revoke<br>
+© 2026 RootedFlakoo
+</footer>
+
+<script>
+setTimeout(() => {
+  document.getElementById("popup").style.display = "none";
+}, 7000);
+
+document.querySelectorAll(".copy-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(btn.dataset.script);
+    btn.textContent = "COPIED";
+    setTimeout(() => btn.textContent = "COPY", 1500);
+  });
+});
+</script>
+
+</body>
+</html>
