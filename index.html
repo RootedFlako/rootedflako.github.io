@@ -125,8 +125,8 @@ header p {
 
 @keyframes fadeIn { to { opacity: 1; } }
 
-/* App Cards */
-.app {
+/* App & Script Cards */
+.app, .script {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,18 +142,22 @@ header p {
 .ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); background-size: 200% 200%; }
 .esign { background: linear-gradient(135deg, #34c759, #22863a); background-size: 200% 200%; }
 .dns { background: linear-gradient(135deg, #af52de, #7a2fae); background-size: 200% 200%; }
+.script { background: linear-gradient(135deg, #2a2a30, #1a1a1f); }
 
-.app:hover {
+/* Animate gradient shift on hover */
+.app:hover, .script:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
   background-position: right center;
 }
 
-.app-info { flex: 1; text-align: left; }
-.app-info h3 { margin: 0; font-size: 18px; }
-.app-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
+/* App info */
+.app-info, .script-info { flex: 1; text-align: left; }
+.app-info h3, .script-info h4 { margin: 0; font-size: 18px; }
+.app-info p, .script-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
 
-.install {
+/* Install & Run Buttons */
+.install, .run-btn {
   background: rgba(255,255,255,0.15);
   color: #fff;
   padding: 10px 16px;
@@ -164,7 +168,7 @@ header p {
   transition: all 0.2s;
 }
 
-.install:hover {
+.install:hover, .run-btn:hover {
   background: #fff;
   color: #000;
   transform: scale(1.1);
@@ -175,41 +179,6 @@ header p {
 .scripts-section { margin-top: 40px; }
 .scripts-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .scripts-warning { font-size: 13px; color: #ffcc00; margin-bottom: 15px; opacity: 0.9; }
-
-.script {
-  background: linear-gradient(135deg, #2a2a30, #1a1a1f);
-  padding: 14px;
-  border-radius: 16px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.script:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-}
-
-.script-info h4 { margin: 0; font-size: 16px; }
-.script-info p { margin: 4px 0 0; font-size: 12px; opacity: 0.7; }
-
-.run-btn {
-  background: #ff3b30;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 13px;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.run-btn:hover {
-  background: #cc2e26;
-  transform: scale(1.08);
-}
 
 /* Footer */
 footer {
@@ -251,7 +220,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 <!-- HEADER -->
 <header>
   <h1>SideLoaded By RootedFlakoo</h1>
-  <p>God is good 🙏</p>
+  <p>God is good</p>
 </header>
 
 <!-- Ksign -->
@@ -329,15 +298,15 @@ window.onload = () => {
   const popupBox = popup.querySelector(".popup-box");
   popupBox.addEventListener("click", () => { popup.classList.add("hidden"); });
 
-  // Scroll reveal for app cards
-  const apps = document.querySelectorAll('.app');
+  // Scroll reveal for app + script cards
+  const cards = document.querySelectorAll('.app, .script');
   const reveal = () => {
     const triggerBottom = window.innerHeight * 0.9;
-    apps.forEach(app => {
-      const appTop = app.getBoundingClientRect().top;
-      if(appTop < triggerBottom){
-        app.style.opacity = '1';
-        app.style.transform = 'translateY(0)';
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop < triggerBottom){
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
       }
     });
   };
