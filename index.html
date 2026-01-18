@@ -156,8 +156,8 @@ header p {
 .app-info h3, .script-info h4 { margin: 0; font-size: 18px; }
 .app-info p, .script-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
 
-/* Install & Run Buttons */
-.install, .run-btn {
+/* Install & Copy Buttons */
+.install, .run-btn, .copy-btn {
   background: rgba(255,255,255,0.15);
   color: #fff;
   padding: 10px 16px;
@@ -166,13 +166,21 @@ header p {
   font-weight: 700;
   font-size: 14px;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
-.install:hover, .run-btn:hover {
+.install:hover, .run-btn:hover, .copy-btn:hover {
   background: #fff;
   color: #000;
   transform: scale(1.1);
   box-shadow: 0 0 12px #fff;
+}
+
+.copy-btn.copied {
+  background: #34c759;
+  color: #000;
+  box-shadow: 0 0 12px #34c759;
 }
 
 /* Scripts Section */
@@ -252,31 +260,31 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 
 <!-- SCRIPTS SECTION -->
 <div class="scripts-section">
-  <div class="scripts-title">Scripts</div>
+  <div class="scripts-title">Steal A Brain Rot</div>
   <div class="scripts-warning">
     ⚠️ Use at your own risk. Scripts may cause bans, crashes, or data loss.
   </div>
 
-  <!-- Chili Hub Script -->
+  <!-- Chili Hub -->
   <div class="script">
     <div class="script-info">
       <h4>Chili Hub Script</h4>
-      <p>Load Chili Hub Lua script safely</p>
+      <p>Brain Rot • Universal Chili Hub loadstring</p>
     </div>
-    <a class="run-btn" href="https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua" target="_blank">
-      VIEW
-    </a>
+    <button class="copy-btn" data-script='loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()'>
+      COPY
+    </button>
   </div>
 
-  <!-- Lemon Hub Script -->
+  <!-- Lemon Hub -->
   <div class="script">
     <div class="script-info">
       <h4>Lemon Hub Script</h4>
-      <p>Load Lemon Hub Lua script safely</p>
+      <p>Brain Rot • Official Lemon Hub loadstring</p>
     </div>
-    <a class="run-btn" href="https://lemonhub.xyz/panel/script" target="_blank">
-      VIEW
-    </a>
+    <button class="copy-btn" data-script='loadstring(game:HttpGet("https://lemonhub.xyz/panel/script"))()'>
+      COPY
+    </button>
   </div>
 
 </div>
@@ -312,6 +320,21 @@ window.onload = () => {
   };
   window.addEventListener('scroll', reveal);
   reveal(); // initial check
+
+  // Copy buttons for scripts
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const script = btn.getAttribute('data-script');
+      navigator.clipboard.writeText(script).then(() => {
+        btn.classList.add('copied');
+        btn.textContent = 'COPIED';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = 'COPY';
+        }, 1500);
+      });
+    });
+  });
 };
 </script>
 
