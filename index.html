@@ -6,29 +6,27 @@
 <title>SideLoaded By RootedFlakoo</title>
 
 <style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f0f12;
-  color: #fff;
-  margin: 0;
-  padding: 20px;
+:root {
+  --bg: #0b0f1a;
+  --card: #141a2b;
+  --accent: #4f7cff;
+  --accent-soft: #2c3f7a;
+  --text: #e9ecf1;
 }
 
-/* TOP WARNING */
-.top-warning {
-  background: #b30000;
-  padding: 12px;
-  text-align: center;
-  font-weight: 700;
-  border-radius: 12px;
-  margin-bottom: 20px;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #121a35, var(--bg));
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
 }
 
 /* POPUP */
 #popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(8,10,18,.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,22 +34,43 @@ body {
 }
 
 .popup-box {
-  background: #1c1c22;
-  padding: 25px;
+  background: linear-gradient(180deg, #182045, #121833);
+  padding: 26px;
   border-radius: 18px;
   text-align: center;
-  max-width: 300px;
+  max-width: 320px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.popup-box h2 {
+  margin: 0 0 10px;
+}
+
+.popup-box p {
+  font-size: 14px;
+  opacity: .75;
 }
 
 .popup-box a {
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
   padding: 12px;
-  background: #ff0000;
-  color: #fff;
+  background: var(--accent);
+  color: white;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 700;
+}
+
+/* NOTICE */
+.top-warning {
+  background: linear-gradient(90deg, #3a56ff, #5b8cff);
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  color: #fff;
 }
 
 /* SOCIALS */
@@ -59,47 +78,53 @@ body {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .socials a {
-  background: #0a84ff;
-  padding: 10px 16px;
-  border-radius: 10px;
+  background: var(--card);
+  padding: 10px 18px;
+  border-radius: 12px;
   color: white;
   text-decoration: none;
   font-weight: 600;
+  border: 1px solid var(--accent-soft);
 }
 
 /* HEADER */
 header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 
 header h1 {
-  font-size: 38px;
+  font-size: 36px;
   margin: 0;
+  background: linear-gradient(90deg, #7fa2ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header p {
   font-size: 13px;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 /* APPS */
 .app {
   display: flex;
   align-items: center;
-  background: #1c1c22;
-  padding: 16px;
-  border-radius: 18px;
-  margin-bottom: 15px;
-  transition: transform .2s;
+  background: linear-gradient(180deg, #161d38, #121833);
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #243062;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .app:hover {
-  transform: scale(1.02);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(79,124,255,.25);
 }
 
 .app-info {
@@ -107,39 +132,39 @@ header p {
 }
 
 .install {
-  background: #0a84ff;
+  background: var(--accent);
   color: white;
-  padding: 10px 18px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 22px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* SCRIPTS */
 .scripts-section {
-  margin-top: 40px;
+  margin-top: 46px;
 }
 
 .scripts-title {
   font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 6px;
+  font-weight: 900;
 }
 
-.scripts-warning {
+.scripts-sub {
   font-size: 13px;
-  opacity: 0.65;
+  opacity: .6;
   margin-bottom: 14px;
 }
 
 .script {
-  background: #1c1c22;
-  padding: 14px;
-  border-radius: 16px;
-  margin-bottom: 12px;
+  background: linear-gradient(180deg, #161d38, #121833);
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #243062;
 }
 
 .script-info h4 {
@@ -150,29 +175,29 @@ header p {
 .script-info p {
   margin: 4px 0 0;
   font-size: 12px;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .copy-btn {
-  background: #0a84ff;
+  background: var(--accent);
   border: none;
   color: white;
-  padding: 8px 14px;
-  border-radius: 14px;
-  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-weight: 800;
   cursor: pointer;
 }
 
 .copy-btn:hover {
-  opacity: 0.85;
+  box-shadow: 0 0 14px rgba(79,124,255,.6);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   font-size: 12px;
-  opacity: 0.6;
-  margin-top: 40px;
+  opacity: 0.5;
+  margin-top: 46px;
 }
 </style>
 </head>
@@ -182,17 +207,17 @@ footer {
 <!-- POPUP -->
 <div id="popup">
   <div class="popup-box">
-    <h2>Subscribe Required</h2>
-    <p>Subscribe to <b>Rooted</b> before accessing this page</p>
-    <a href="https://youtube.com/@knoxflako" target="_blank">Subscribe</a>
-    <p style="font-size:12px;opacity:.6;margin-top:8px;">
-      Continuing automatically...
+    <h2>Support Rooted</h2>
+    <p>Subscribe to stay updated with new apps & scripts.</p>
+    <a href="https://youtube.com/@knoxflako" target="_blank">Go to YouTube</a>
+    <p style="font-size:12px;opacity:.6;margin-top:10px;">
+      Continuing shortly…
     </p>
   </div>
 </div>
 
 <div class="top-warning">
-DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
+DOWNLOAD DNS BEFORE ATTEMPTING ANY APP INSTALLS
 </div>
 
 <div class="socials">
@@ -233,12 +258,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
 <!-- SCRIPTS -->
 <div class="scripts-section">
   <div class="scripts-title">Scripts</div>
-  <div style="font-size:13px;opacity:.7;margin-bottom:6px;">
-    Steal A Brain Rot (SAB)
-  </div>
-  <div class="scripts-warning">
-    Use at your own risk. Scripts may result in bans.
-  </div>
+  <div class="scripts-sub">Steal A Brain Rot (SAB)</div>
 
   <div class="script">
     <div class="script-info">
