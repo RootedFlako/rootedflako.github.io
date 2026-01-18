@@ -45,9 +45,7 @@ body {
   z-index: 9999;
 }
 
-#popup.hidden {
-  display: none;
-}
+#popup.hidden { display: none; }
 
 .popup-box {
   background: #1c1c22;
@@ -125,10 +123,7 @@ header p {
   animation: fadeIn 1.5s forwards;
 }
 
-/* Fade-in animation for header & cards */
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
 
 /* App Cards */
 .app {
@@ -144,24 +139,20 @@ header p {
   transform: translateY(30px);
 }
 
-/* Gradient backgrounds for apps */
 .ksign { background: linear-gradient(135deg, #0a84ff, #005fcc); background-size: 200% 200%; }
 .esign { background: linear-gradient(135deg, #34c759, #22863a); background-size: 200% 200%; }
 .dns { background: linear-gradient(135deg, #af52de, #7a2fae); background-size: 200% 200%; }
 
-/* Animate gradient shift on hover */
 .app:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
   background-position: right center;
 }
 
-/* App info */
 .app-info { flex: 1; text-align: left; }
 .app-info h3 { margin: 0; font-size: 18px; }
 .app-info p { margin: 4px 0 0; font-size: 13px; opacity: 0.85; }
 
-/* Install Buttons */
 .install {
   background: rgba(255,255,255,0.15);
   color: #fff;
@@ -178,6 +169,46 @@ header p {
   color: #000;
   transform: scale(1.1);
   box-shadow: 0 0 12px #fff;
+}
+
+/* Scripts Section */
+.scripts-section { margin-top: 40px; }
+.scripts-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+.scripts-warning { font-size: 13px; color: #ffcc00; margin-bottom: 15px; opacity: 0.9; }
+
+.script {
+  background: linear-gradient(135deg, #2a2a30, #1a1a1f);
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.script:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+.script-info h4 { margin: 0; font-size: 16px; }
+.script-info p { margin: 4px 0 0; font-size: 12px; opacity: 0.7; }
+
+.run-btn {
+  background: #ff3b30;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.run-btn:hover {
+  background: #cc2e26;
+  transform: scale(1.08);
 }
 
 /* Footer */
@@ -229,7 +260,7 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
     <h3>Ksign</h3>
     <p>Sign apps directly on iOS</p>
   </div>
-  <a class="install" href="https://i.diawi.com/Eop5TQ">GET</a>
+  <a class="install" href="https://i.diawi.com/EVysrX">GET</a>
 </div>
 
 <!-- Esign -->
@@ -250,6 +281,37 @@ DOWNLOAD DNS BEFORE YOU ATTEMPT TO DOWNLOAD ANY APPS
   <a class="install" href="https://github.com/Nyasami/getUDID-JS/releases/download/1.0.0/signed_khoindvn_fullchain.mobileconfig">GET</a>
 </div>
 
+<!-- SCRIPTS SECTION -->
+<div class="scripts-section">
+  <div class="scripts-title">Scripts</div>
+  <div class="scripts-warning">
+    ⚠️ Use at your own risk. Scripts may cause bans, crashes, or data loss.
+  </div>
+
+  <!-- Chili Hub Script -->
+  <div class="script">
+    <div class="script-info">
+      <h4>Chili Hub Script</h4>
+      <p>Load Chili Hub Lua script safely</p>
+    </div>
+    <a class="run-btn" href="https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua" target="_blank">
+      VIEW
+    </a>
+  </div>
+
+  <!-- Lemon Hub Script -->
+  <div class="script">
+    <div class="script-info">
+      <h4>Lemon Hub Script</h4>
+      <p>Load Lemon Hub Lua script safely</p>
+    </div>
+    <a class="run-btn" href="https://lemonhub.xyz/panel/script" target="_blank">
+      VIEW
+    </a>
+  </div>
+
+</div>
+
 <footer>
 Educational purposes only • Certificates may revoke<br>
 © 2026 RootedFlakoo
@@ -261,15 +323,11 @@ window.onload = () => {
   popup.classList.add("show");
 
   // Hide popup after 7 seconds
-  setTimeout(() => {
-    popup.classList.add("hidden");
-  }, 7000);
+  setTimeout(() => { popup.classList.add("hidden"); }, 7000);
 
   // Allow user to click popup to dismiss early
   const popupBox = popup.querySelector(".popup-box");
-  popupBox.addEventListener("click", () => {
-    popup.classList.add("hidden");
-  });
+  popupBox.addEventListener("click", () => { popup.classList.add("hidden"); });
 
   // Scroll reveal for app cards
   const apps = document.querySelectorAll('.app');
